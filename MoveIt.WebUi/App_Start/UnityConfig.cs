@@ -41,6 +41,8 @@ namespace MoveIt.WebUi.App_Start
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>();
             container.RegisterType<IRepository<ApplicationUser>, UserRepository>();
+            container.RegisterType<IRepository<Event>, EventReposiotry>();
+            container.RegisterType<IRepository<Team>, TeamRepository>();
         }
     }
 }
