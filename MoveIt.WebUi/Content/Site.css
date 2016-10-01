@@ -22,3 +22,47 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/* Shared Elements */
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("images/home-background.jpg");
+    -ms-background-size: cover;
+    background-size: cover;
+    color: #fff;
+}
+
+
+/* Override Bootstrap */
+.navbar .navbar-inverse {
+    color: #7FE82D !important;
+}
+
+.wrapper {
+    margin-bottom: 50px;
+    margin-top: 50px;
+    z-index: 100;
+}
+
+    .wrapper h1 {
+        width: 100%;
+        font-size: 16em;
+        color: #7FE82D;
+    }
+
+.lead {
+    color: #fff;
+    font-size: 1.6em;
+    color: #7FE82D;
+    margin-top: 6%;
+}
+/* Custom Page */
+.home-header {
+    margin: 0 10%;
+}
+
+
+
+/* Colors: 
+    Primary - #7FE82D(green)/#FFA21A(orange)
+
+*/
