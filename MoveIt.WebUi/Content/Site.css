@@ -59,7 +59,7 @@ textarea {
     color: #7FE82D;
 }
 
-/* Layout */
+/*----------------------------- Layout -----------------------------*/
 .footer {
     position: absolute;
     bottom: 0;
@@ -68,7 +68,7 @@ textarea {
     color: #777;
 }
 
-/* Jumbotron */
+/*----------------------------- Jumbotron -----------------------------*/
 .homepage-hero-module {
     border-right: none;
     border-left: none;
@@ -146,3 +146,4 @@ textarea {
         .video-container video.fillWidth {
             width: 100%;
         }
+/*----------------------------- End Jumbotron -----------------------------*/
