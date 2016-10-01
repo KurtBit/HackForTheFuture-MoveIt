@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="filter"></div>
-            <video autoplay loop class="fillWidth">
+            <video autoplay loop muted class="fillWidth">
                 <source src="~/Assets/Videos/Jumbotron_Video.m4v" type="video/mp4" />
                 Your browser does not support the video tag. I suggest you upgrade your browser.
             </video>
@@ -26,11 +26,37 @@
     </div>
 </section>
 <section id="tournament-events">
-    @foreach (var tournamentEvent in Model)
-    {
-        <div>@tournamentEvent.Name</div>
-    }
+    <h2 class="text-center">Upcomming events:</h2>
+    <div class="container">
+        @foreach (var tournamentEvent in Model)
+        {
+            <div class="row">
+                <div class="col-lg-offset-4 col-lg-1">Icon image</div>
+                <div class="col-lg-7">
+                    <span>@tournamentEvent.Name</span>
+                    <span>
+                        Playing:
+                        @foreach (var team in tournamentEvent.Teams)
+                        {
+                            if (@team != tournamentEvent.Teams.Last() )
+                            {
+                                @team.Name; @:VS
+                            }
+                            else
+                            {
+                                @team.Name;
+                            }
+                        }
+                    </span>
+                    <span>Location:</span>
+                    <span>at: Date</span>
+                </div>
+            </div>
+        }
+    </div>
 </section>
+
+
 
 @section scripts {
     <script>
@@ -103,9 +129,7 @@
                 $(this).width(videoWidth).height(videoHeight);
 
                 $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
-
-
             });
         }
-    </script>    
+    </script>
 }

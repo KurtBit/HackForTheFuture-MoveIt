@@ -24,8 +24,8 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("View Upcomming Events", "About", "Home")</li>
-                        <li>@Html.ActionLink("Find A Game!", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Find A Game", "Index", "GameLobby")</li>
+                        <li>@Html.ActionLink("View Upcomming Events", "Contact", "Home")</li>
                     </ul>
                     @Html.Partial("_LoginPartial")
                 </div>
@@ -38,7 +38,29 @@
     <footer class="footer">
         <div class="container-fluid">
             <div class="row">
-                <p>&copy; @DateTime.Now.Year - KurtBit Inc</p>
+                <div class="col-lg-4 col-lg-offset-2">
+                    <ul>
+                        <li>@Html.ActionLink("Home Page", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Upcomming Events", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Find a Game", "Index", "GameLobby")</li>
+                        <li>@Html.ActionLink("See your Events", "About", "Home")</li>
+                        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <ul>
+                        <li><a href="facebook.com">Facebook</a></li>
+                        <li><a href="twitter.com">Twitter</a></li>
+                        <li><a href="instagram.com">Instagram</a></li>
+                        <li><a href="googleplus.com">Google+</a></li>
+                        <li><a href="tumblr.com"></a>Tumblr</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="text-center">&copy; @DateTime.Now.Year - KurtBit Inc. All rights reserved.</p>
+                </div>
             </div>
         </div>
     </footer>
