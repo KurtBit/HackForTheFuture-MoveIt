@@ -3,9 +3,9 @@ using System;
 
 namespace MoveIt.DAL.Repositories
 {
-    public class EventReposiotry : RepositoryBase<Event>
+    public class TournamentEventReposiotry : RepositoryBase<TournamentEvent>
     {
-        public EventReposiotry(ApplicationDbContext context)
+        public TournamentEventReposiotry(ApplicationDbContext context)
             : base(context)
         {
             if(context == null)

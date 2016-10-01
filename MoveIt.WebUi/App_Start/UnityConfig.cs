@@ -44,7 +44,7 @@ namespace MoveIt.WebUi.App_Start
             container.RegisterType<ManageController>(new InjectionConstructor());
 
             container.RegisterType<IRepository<ApplicationUser>, UserRepository>();
-            container.RegisterType<IRepository<Event>, EventReposiotry>();
+            container.RegisterType<IRepository<TournamentEvent>, TournamentEventReposiotry>();
             container.RegisterType<IRepository<Team>, TeamRepository>();
         }
     }

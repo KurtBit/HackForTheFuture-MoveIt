@@ -15,7 +15,7 @@ namespace MoveIt.DAL.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
-            AddColumn("dbo.Teams", "Event_Id", c => c.Int());
+            AddColumn("dbo.Teams", "Event_Id", c => c.Int(nullable: true));
             CreateIndex("dbo.Teams", "Event_Id");
             AddForeignKey("dbo.Teams", "Event_Id", "dbo.Events", "Id");
         }

@@ -70,11 +70,23 @@
     <Compile Include="Migrations\201610010903325_AddEvent.Designer.cs">
       <DependentUpon>201610010903325_AddEvent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610011445105_FixEventName.cs" />
+    <Compile Include="Migrations\201610011445105_FixEventName.Designer.cs">
+      <DependentUpon>201610011445105_FixEventName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610011452220_EventNameRefactoring.cs" />
+    <Compile Include="Migrations\201610011452220_EventNameRefactoring.Designer.cs">
+      <DependentUpon>201610011452220_EventNameRefactoring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610011534330_FixTeamTournamentEventRelationship.cs" />
+    <Compile Include="Migrations\201610011534330_FixTeamTournamentEventRelationship.Designer.cs">
+      <DependentUpon>201610011534330_FixTeamTournamentEventRelationship.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\TeamRepository.cs" />
     <Compile Include="Repositories\RepositoryBase{T}.cs" />
-    <Compile Include="Repositories\EventReposiotry.cs" />
+    <Compile Include="Repositories\TournamentEventReposiotry.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +112,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610010903325_AddEvent.resx">
       <DependentUpon>201610010903325_AddEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610011445105_FixEventName.resx">
+      <DependentUpon>201610011445105_FixEventName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610011452220_EventNameRefactoring.resx">
+      <DependentUpon>201610011452220_EventNameRefactoring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610011534330_FixTeamTournamentEventRelationship.resx">
+      <DependentUpon>201610011534330_FixTeamTournamentEventRelationship.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
