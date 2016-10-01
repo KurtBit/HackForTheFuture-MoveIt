@@ -1,9 +1,7 @@
 ﻿using MoveIt.Contracts.Repositories;
 using MoveIt.Models;
-using System;
-using System.Collections.Generic;
+using MoveIt.WebUi.ViewModels;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MoveIt.WebUi.Controllers
@@ -12,15 +10,25 @@ namespace MoveIt.WebUi.Controllers
     public class HomeController : Controller
     {
         private IRepository<ApplicationUser> _users;
+        private IRepository<TournamentEvent> _tournamentEvents;
         
-        public HomeController(IRepository<ApplicationUser> users)
+        public HomeController(
+            IRepository<ApplicationUser> users,
+            IRepository<TournamentEvent> tournamentEvents)
         {
             this._users = users;
+            this._tournamentEvents = tournamentEvents;
         }
 
         public ActionResult Index()
         {
-            return View();
+            var tournamentEvents = 
+                _tournamentEvents
+                .GetAll()
+                .Select(TournamentEventViewModel.FromTournamentEvent)
+                .ToList();
+
+            return View(tournamentEvents);
         }
 
         public ActionResult About()

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<MoveIt.WebUi.ViewModels.TournamentEventViewModel>
+@{
     ViewBag.Title = "Home";
 }
 
@@ -23,6 +24,12 @@
             </div>
         </div>
     </div>
+</section>
+<section id="tournament-events">
+    @foreach (var tournamentEvent in Model)
+    {
+        <div>@tournamentEvent.Name</div>
+    }
 </section>
 
 @section scripts {
