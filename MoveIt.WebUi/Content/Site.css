@@ -1,8 +1,10 @@
 ﻿/* Colors: 
-    Primary - #7FE82D(green)/#FFA21A(orange)
+    Primary - #616C0D(green)/#FFA21A(orange)
+    Footer - #A68369
 */
 
 body {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -26,53 +28,41 @@ textarea {
     max-width: 280px;
 }
 
-/* Shared Elements */
-
-.home-wrapper {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("images/home-background.jpg");
-    background-size: cover;
-    color: #fff;
+/*----------------------------- Bootstrap Overwrites -----------------------------*/
+/*--------------------------------------------------------------------------------*/
+.navbar-default .navbar-brand {
+    color: #616C0D;
+    font-weight: 700;
 }
 
-
-/* Override Bootstrap */
-.navbar .navbar-inverse {
-    color: #7FE82D !important;
+.navbar-default .navbar-nav > li > a {
+    color: #73801D;
 }
 
-.container-fluid {
-    margin: 0;
-    max-height: 100vh;
-}
-
-.lead {
-    color: #fff;
-    font-size: 1.6em;
-    color: #7FE82D;
-    margin-top: 6%;
-}
-
-/* Custom Page */
-.home-header {
-    margin: 0 10%;
-    font-size: 14em;
-    color: #7FE82D;
-}
-
+/*----------------------------- Custom CSS -----------------------------*/
+/*----------------------------------------------------------------------*/
 /*----------------------------- Layout -----------------------------*/
 .footer {
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 60px;
-    color: #777;
+    color: #A68369;
 }
+/*----------------------------- End Layout -----------------------------*/
 
+
+/*Home/Index*/
 /*----------------------------- Jumbotron -----------------------------*/
 .homepage-hero-module {
     border-right: none;
     border-left: none;
     position: relative;
+}
+
+.headline,
+.description {
+    color: #F6FCFC;
 }
 
 .no-video .video-container video,
@@ -93,6 +83,7 @@ textarea {
     width: 100%;
     overflow: hidden;
     background: #000;
+    transform: scaleX(1.35);
 }
 
     .video-container .poster img {
