@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
 using MoveIt.Models;
+using System.Data.Entity;
 
 namespace MoveIt.DAL
 {
@@ -9,6 +10,8 @@ namespace MoveIt.DAL
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+
+        public DbSet<Team> Teams { get; set; }
 
         public static ApplicationDbContext Create()
         {

@@ -33,7 +33,7 @@ namespace MoveIt.DAL.Migrations
                 {
                     UserName = "Dominent",
                     Email = "petromilpavlov@gmail.com",
-                    PasswordHash = passwordHasher.HashPassword(password)
+                    PasswordHash = passwordHasher.HashPassword(password),
                 };
 
                 userManager.Create(owner);
@@ -41,8 +41,9 @@ namespace MoveIt.DAL.Migrations
                 context.SaveChanges();
 
                 #endregion
-#endif
             }
+#endif
         }
     }
 }
+
