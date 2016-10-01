@@ -6,6 +6,8 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using MoveIt.WebUi.Models;
+using MoveIt.Models;
+using MoveIt.DAL;
 
 namespace MoveIt.WebUi
 {
