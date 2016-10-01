@@ -46,12 +46,23 @@ textarea {
     color: #7FE82D;
     margin-top: 6%;
 }
+
 /* Custom Page */
 .home-header {
     margin: 0 10%;
     font-size: 14em;
     color: #7FE82D;
 }
+
+/* Layout */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    color: #777;
+}
+    
 
 
 
