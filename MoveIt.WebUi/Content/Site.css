@@ -5,8 +5,7 @@
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -24,9 +23,9 @@ textarea {
 }
 
 /* Shared Elements */
-body {
+
+.home-wrapper {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("images/home-background.jpg");
-    -ms-background-size: cover;
     background-size: cover;
     color: #fff;
 }
@@ -37,18 +36,10 @@ body {
     color: #7FE82D !important;
 }
 
-.wrapper {
-    margin-bottom: 50px;
-    margin-top: 50px;
-    z-index: 100;
+.container-fluid {
+    margin: 0;
+    max-height: 100vh;
 }
-
-    .wrapper h1 {
-        width: 100%;
-        font-size: 16em;
-        color: #7FE82D;
-    }
-
 .lead {
     color: #fff;
     font-size: 1.6em;
@@ -58,6 +49,8 @@ body {
 /* Custom Page */
 .home-header {
     margin: 0 10%;
+    font-size: 14em;
+    color: #7FE82D;
 }
 
 
