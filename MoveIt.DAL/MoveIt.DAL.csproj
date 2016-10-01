@@ -66,9 +66,15 @@
     <Compile Include="Migrations\201610010856212_AddTeam.Designer.cs">
       <DependentUpon>201610010856212_AddTeam.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610010903325_AddEvent.cs" />
+    <Compile Include="Migrations\201610010903325_AddEvent.Designer.cs">
+      <DependentUpon>201610010903325_AddEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\TeamRepository.cs" />
     <Compile Include="Repositories\RepositoryBase{T}.cs" />
+    <Compile Include="Repositories\EventReposiotry.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610010856212_AddTeam.resx">
       <DependentUpon>201610010856212_AddTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610010903325_AddEvent.resx">
+      <DependentUpon>201610010903325_AddEvent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -16,6 +16,8 @@ namespace MoveIt.Models
         [StringLength(GeneralConstants.MAX_TEAM_NAME_LENGTH)]
         public string Name { get; set; }
 
+        public virtual Event Event { get; set; }
+
         public virtual ICollection<ApplicationUser> Users { get; set; }
     }
 }

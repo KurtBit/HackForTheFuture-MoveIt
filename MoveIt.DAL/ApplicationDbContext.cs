@@ -12,6 +12,7 @@ namespace MoveIt.DAL
         }
 
         public DbSet<Team> Teams { get; set; }
+        public DbSet<Event> Events { get; set; }
 
         public static ApplicationDbContext Create()
         {
