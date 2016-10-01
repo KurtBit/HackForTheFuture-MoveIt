@@ -1,9 +1,9 @@
 using System;
 using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
 using MoveIt.Contracts.Repositories;
 using MoveIt.Models;
 using MoveIt.DAL.Repositories;
+using MoveIt.WebUi.Controllers;
 
 namespace MoveIt.WebUi.App_Start
 {
@@ -40,6 +40,9 @@ namespace MoveIt.WebUi.App_Start
 
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>();
+            container.RegisterType<AccountController>(new InjectionConstructor());
+            container.RegisterType<ManageController>(new InjectionConstructor());
+
             container.RegisterType<IRepository<ApplicationUser>, UserRepository>();
             container.RegisterType<IRepository<Event>, EventReposiotry>();
             container.RegisterType<IRepository<Team>, TeamRepository>();

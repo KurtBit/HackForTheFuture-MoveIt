@@ -8,10 +8,11 @@ using System.Web.Mvc;
 
 namespace MoveIt.WebUi.Controllers
 {
+    [RequireHttps]
     public class HomeController : Controller
     {
         private IRepository<ApplicationUser> _users;
-
+        
         public HomeController(IRepository<ApplicationUser> users)
         {
             this._users = users;
