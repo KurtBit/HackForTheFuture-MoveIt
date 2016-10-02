@@ -34,5 +34,4 @@ namespace MoveIt.WebUi.Controllers
             return View(teams);
         }
     }
-
 }

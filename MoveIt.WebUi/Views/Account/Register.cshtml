@@ -8,10 +8,11 @@
 <div class="row">
     <div class="col-md-8">
         <section>
-           @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            @using (Html.BeginForm("Register", "Account", FormMethod.Post,
+                       new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
             {
-            @Html.AntiForgeryToken()
-            <h4>Create a new account.</h4>
+                @Html.AntiForgeryToken()
+                <h4>Create a new account.</h4>
                 <hr />
                 @Html.ValidationSummary("", new { @class = "text-danger" })
                 <div class="form-group">
@@ -32,12 +33,35 @@
                         @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
                     </div>
                 </div>
+                @*<div class="form-group">
+                        @Html.Label("Avatar", new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <input type="file" id="imageUploadForm" name="image" multiple="multiple" />
+                        </div>
+                    </div>*@
+                <div class="form-group">
+                    @Html.Label("Avatar", new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <input type="file" id="filename" name="filename" accept="image/*" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <p id="response"></p>
+                        <canvas class="hide" id="myCanvas" width="1000" height="800">
+                            Your browser does not support the HTML5 canvas tag.
+                        </canvas>
+                        <a class="btn btn-default" id="btn">Verify</a>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
                         <input type="submit" class="btn btn-default" value="Register" />
                     </div>
                 </div>
-           }
+            }
         </section>
     </div>
     <div class="col-md-4">
@@ -47,6 +71,119 @@
     </div>
 </div>
 
-@section Scripts {
+@section scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryajax")
+
+    @*<script>
+            $(document).ready(function () {
+                $("#imageUploadForm").change(function () {
+                    var formData = new FormData();
+                    var totalFiles = document.getElementById("imageUploadForm").files.length;
+                    for (var i = 0; i < totalFiles; i++) {
+                        var file = document.getElementById("imageUploadForm").files[i];
+
+                        formData.append("imageUploadForm", file);
+                    }
+                    $.ajax({
+                        type: "POST",
+                        url: '/Home/Upload',
+                        data: formData,
+                        dataType: 'json',
+                        contentType: false,
+                        processData: false,
+                        success: function (response) {
+                            alert('succes!!');
+                        },
+                        error: function (error) {
+                            alert("error");
+                        }
+                    });
+                });
+            });
+
+        </script>*@
+
+    <script>
+        $('#btn').click(function () {
+            $('#myCanvas').removeClass('hide');
+            var file = document.getElementById('filename').files[0];
+            detectFaces(file);
+        });
+
+        $("#filename").change(function () {
+            showImage();
+        });
+
+        function detectFaces(file) {
+            var apiKey = "cb0fddfeb3074fa68327487511f7ab18";
+            var params = {
+                // Request parameters
+                "returnFaceId": "true",
+                "returnFaceLandmarks": "false",
+                "returnFaceAttributes": "{string}",
+            };
+
+            // Call the API
+            $.ajax({
+                url: "https://api.projectoxford.ai/face/v1.0/detect" /*+ $.param(params)*/,
+                beforeSend: function (xhrObj) {
+                    xhrObj.setRequestHeader("Content-Type", "application/octet-stream");
+                    xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", apiKey);
+                    $("#response").text("Calling api...");
+                },
+                type: "POST",
+                data: file,
+                processData: false
+            })
+                .done(function (response) {
+                    // Process the API response.
+                    processResult(response);
+                })
+                .fail(function (error) {
+                    // Oops, an error :(
+                    $("#response").text(error.getAllResponseHeaders());
+                });
+        }
+
+        function processResult(response) {
+            var arrayLength = response.length;
+
+            if (arrayLength > 0) {
+                var canvas = document.getElementById('myCanvas');
+                var context = canvas.getContext('2d');
+
+                context.beginPath();
+
+                // Draw face rectangles into canvas.
+                for (var i = 0; i < arrayLength; i++) {
+                    var faceRectangle = response[i].faceRectangle;
+                    context.rect(faceRectangle.left, faceRectangle.top, faceRectangle.width, faceRectangle.height);
+                }
+
+                context.lineWidth = 3;
+                context.strokeStyle = 'red';
+                context.stroke();
+            }
+
+            // Show the raw response.
+            var data = JSON.stringify(response);
+            $("#response").text(data);
+        }
+
+        function showImage() {
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+            context.clearRect(0, 0, canvas.width, canvas.height);
+
+            var input = document.getElementById("filename");
+            var img = new Image;
+
+            img.onload = function () {
+                context.drawImage(img, 0, 0);
+            }
+
+            img.src = URL.createObjectURL(input.files[0]);
+        }
+    </script>
 }

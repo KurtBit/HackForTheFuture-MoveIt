@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MoveIt.WebUi.ViewModels;
 using MoveIt.Models;
+using MoveIt.WebUi.Attributes;
 
 namespace MoveIt.WebUi.Controllers
 {
@@ -136,6 +137,7 @@ namespace MoveIt.WebUi.Controllers
         //
         // GET: /Account/Register
         [AllowAnonymous]
+        [AllowCrossSiteJsonAttribute]
         public ActionResult Register()
         {
             return View();
@@ -146,9 +148,10 @@ namespace MoveIt.WebUi.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        [AllowCrossSiteJsonAttribute]
+        public async Task<ActionResult> Register(RegisterViewModel model, HttpPostedFileBase upload)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && upload != null)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
@@ -480,5 +483,13 @@ namespace MoveIt.WebUi.Controllers
             }
         }
         #endregion
+
+        [HttpPost]
+        public JsonResult ValidateImage()
+        {
+            var files = Request.Files;
+
+            return Json("Ok");
+        }
     }
 }
