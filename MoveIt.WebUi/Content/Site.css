@@ -210,8 +210,48 @@ body > footer > div > div:nth-child(1) > div:nth-child(2) {
 
 /*GameLobby/Index*/
 /*----------------------------- Game Lobby -----------------------------*/
+body > main > section > div > div > div:nth-child(1) {
+    border-right: 1px solid #73801d;
+}
+
+body > main > section > div > div > div:nth-child(3) {
+    border-left: 1px solid #73801d;
+}
+
 .game-lobby > div > div > div:nth-child(2) > h2 {
     color: #616C0D;
     font-weight: 700;
+}
+
+body > main > section > div > div > div:nth-child(1) hr,
+body > main > section > div > div > div:nth-child(3) hr {
+    width: 70%;
+    border-color: #73801d;
+}
+
+.game-lobby .game-lobby-location {
+    height: 250px;
+    border: 4px outset #73801D;
+    margin-bottom: 2%;
+}
+
+.game-lobby > div > div > div:nth-child(2) > div:nth-child(3) > div {
+    padding-left: 7%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.game-lobby h3 {
+    color: #616C0D;
+}
+
+.team-user-name {
+    color: #616C0D;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.team-user-photo {
+    border-radius: 50%;
 }
 /*----------------------------- End Game Lobby -----------------------------*/

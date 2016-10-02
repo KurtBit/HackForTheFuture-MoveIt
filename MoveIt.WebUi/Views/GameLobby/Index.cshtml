@@ -1,4 +1,5 @@
-﻿@model IEnumerable<MoveIt.WebUi.ViewModels.TeamViewModel>
+﻿@using MoveIt.WebUi.ViewModels
+@model IEnumerable<MoveIt.WebUi.ViewModels.TeamViewModel>
 
 @{
     ViewBag.Title = "Game Lobby";
@@ -7,24 +8,53 @@
 <section class="game-lobby">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <h3 class="text-center">Team 1: @Model.FirstOrDefault().Name</h3>
+                <hr />
+                @foreach (var team in Model)
+                {
+                    @Html.DisplayForModel(team);
+                }
+            </div>
             <div class="col-lg-4">
                 <h2 class="text-center">Game Lobby</h2>
                 <div class="row">
-                    <div class="col-lg-12">
-                        Location Displayed here:
+                    <div class="col-lg-offset-1 col-lg-10 game-lobby-location">
+                        <h5 class="text-center">Location Displayed here:</h5>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-offset-2 col-lg-4">
-                        <button type="submit">Agree/Play</button>
-                    </div>
-                    <div class="col-lg-4">
-                        <button type="reset">I don't think so</button>
+                    <div class="col-lg-offset-4 col-lg-8">
+                        <img src="#" alt="Current User" />
                     </div>
                 </div>
+                <div class="row">
+                    <form action="/" method="post">
+                        @*TODO:@Html.BeginForm()*@
+                        <div class="col-lg-offset-2 col-lg-4">
+                            <button class="btn btn-facebook" type="submit">Agree/Play</button>
+                        </div>
+                        <div class="col-lg-offset-1 col-lg-4">
+                            <button class="btn btn-adn" type="reset">I don't think so</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <h3 class="text-center">Team 2 @Model.LastOrDefault().Name</h3>
+                <hr />
+                @foreach (var team in Model)
+                {
+                    @Html.DisplayForModel(team)
+                }
+            </div>
         </div>
     </div>
 </section>
+
+@section scripts
+{
+    <script>
+        
+    </script>
+}
