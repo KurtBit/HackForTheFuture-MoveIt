@@ -8,6 +8,8 @@
     @Scripts.Render("~/bundles/modernizr")
     
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <link href="~/Content/ionicons.min.css" rel="stylesheet" type="text/css">
+
 
 </head>
 <body>
@@ -24,8 +26,8 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Find A Game", "Index", "GameLobby")</li>
-                        <li>@Html.ActionLink("View Upcomming Events", "Contact", "Home")</li>
+                        <li><i class="ion-ios-game-controller-b-outline nav-icon"></i>@Html.ActionLink("Find A Game", "Index", "GameLobby")</li>
+                        <li><i class="ion-trophy nav-icon"></i>@Html.ActionLink("View Upcomming Events", "Contact", "Home")</li>
                     </ul>
                     @Html.Partial("_LoginPartial")
                 </div>
@@ -49,11 +51,31 @@
                 </div>
                 <div class="col-lg-6">
                     <ul>
-                        <li><a href="https://www.facebook.com/">Facebook</a></li>
-                        <li><a href="https://twitter.com/">Twitter</a></li>
-                        <li><a href="https://www.instagram.com/">Instagram</a></li>
-                        <li><a href="https://plus.google.com/">Google+</a></li>
-                        <li><a href="https://www.tumblr.com/"></a>Tumblr</li>
+                        <li>
+                            <a href="https://www.facebook.com/">
+                                <i class="ion-social-facebook footer-icon"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/">
+                                <i class="ion-social-twitter footer-icon"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/">
+                                <i class="ion-social-instagram footer-icon"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/">
+                                <i class="ion-social-googleplus footer-icon"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.tumblr.com/">
+                                <i class="ion-social-tumblr footer-icon"></i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

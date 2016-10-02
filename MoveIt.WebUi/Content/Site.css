@@ -43,6 +43,19 @@ textarea {
 /*----------------------------------------------------------------------*/
 
 /*----------------------------- Layout -----------------------------*/
+/*----------------------------- Navbar -----------------------------*/
+body > header > div > div > div.navbar-collapse.collapse > ul > li > a {
+    display: inline-block;
+    padding-left: 0;
+}
+
+.nav-icon {
+    color: #616c0d;
+    padding-right: 10px;
+    font-size: 1.7rem;
+}
+
+/*----------------------------- End Navbar -----------------------------*/
 
 /*----------------------------- Footer -----------------------------*/
 body > footer > div {
@@ -57,15 +70,36 @@ body > footer ul {
     list-style: none;
 }
 
-body > footer > div > div > div > ul li > a {
+body > footer > div > div > div > ul li > a:link,
+body > footer > div > div > div > ul li > a:visited {
     color: #A68369;
     font-weight: 700;
 }
 
-    body > footer > div > div > div > ul li > a:hover,
-    body > footer > div > div > div > ul li > a:active {
-        color: #616C0D;
-    }
+body > footer > div > div > div > ul li:nth-child(1) > a:hover,
+body > footer > div > div > div > ul li:nth-child(1) > a:active {
+    color: #3b5998;
+}
+
+body > footer > div > div > div > ul li:nth-child(2) > a:hover,
+body > footer > div > div > div > ul li:nth-child(2) > a:active {
+    color: #55acee;
+}
+
+body > footer > div > div > div > ul li:nth-child(3) > a:hover,
+body > footer > div > div > div > ul li:nth-child(3) > a:active {
+    color: #e95950;
+}
+
+body > footer > div > div > div > ul li:nth-child(4) > a:hover,
+body > footer > div > div > div > ul li:nth-child(4) > a:active {
+    color: #dd4b39;
+}
+
+body > footer > div > div > div > ul li:nth-child(5) > a:hover,
+body > footer > div > div > div > ul li:nth-child(5) > a:active {
+    color: #32506d;
+}
 
 body > footer > div > div:nth-child(1) > div:nth-child(2) > ul {
     display: inline-flex;
@@ -73,9 +107,9 @@ body > footer > div > div:nth-child(1) > div:nth-child(2) > ul {
     width: 100%;
 }
 
-body > footer > div > div:nth-child(1) > div:nth-child(2) > ul li {
-    flex-grow: 1;
-}
+    body > footer > div > div:nth-child(1) > div:nth-child(2) > ul li {
+        flex-grow: 1;
+    }
 
 body > footer > div > div:nth-child(1) > div:nth-child(2) {
     margin-top: 5%;
@@ -86,6 +120,10 @@ body > footer > div > div:nth-child(1) > div:nth-child(2) {
     width: 100%;
     height: 60px;
     color: #A68369;
+}
+
+.footer-icon {
+    font-size: 2.6rem;
 }
 /*----------------------------- End Layout -----------------------------*/
 
