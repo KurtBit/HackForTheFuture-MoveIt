@@ -82,6 +82,10 @@
     <Compile Include="Migrations\201610011534330_FixTeamTournamentEventRelationship.Designer.cs">
       <DependentUpon>201610011534330_FixTeamTournamentEventRelationship.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610021002429_AddEventDescription.cs" />
+    <Compile Include="Migrations\201610021002429_AddEventDescription.Designer.cs">
+      <DependentUpon>201610021002429_AddEventDescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\TeamRepository.cs" />
@@ -121,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610011534330_FixTeamTournamentEventRelationship.resx">
       <DependentUpon>201610011534330_FixTeamTournamentEventRelationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610021002429_AddEventDescription.resx">
+      <DependentUpon>201610021002429_AddEventDescription.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

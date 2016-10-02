@@ -7,7 +7,6 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MoveIt.WebUi.ViewModels;
 using MoveIt.Models;
-using MoveIt.WebUi.Attributes;
 
 namespace MoveIt.WebUi.Controllers
 {

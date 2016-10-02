@@ -27,33 +27,25 @@
 </section>
 <section id="tournament-events">
     <h2 class="text-center">Upcomming events:</h2>
-    <hr/>
+    <hr />
     <div class="container">
-        @foreach (var tournamentEvent in Model)
-        {
-            <div class="row">
-                <div class="col-lg-offset-4 col-lg-1">Icon image</div>
-                <div class="col-lg-7">
-                    <span>@tournamentEvent.Name</span>
-                    <span>
-                        Playing:
-                        @foreach (var team in tournamentEvent.Teams)
-                        {
-                            if (@team != tournamentEvent.Teams.Last() )
-                            {
-                                @team.Name; @:VS
-                            }
-                            else
-                            {
-                                @team.Name;
-                            }
-                        }
-                    </span>
-                    <span>Location:</span>
-                    <span>at: Date</span>
+        <div class="list-group">
+            @foreach (var tournamentEvent in Model)
+            {
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object" src="http://placehold.it/100x100" alt="">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">@tournamentEvent.Name</h4>
+                        <article>@tournamentEvent.Description</article>
+                        <a href="#" class="btn btn-default pull-right">View Participants</a>
+                    </div>
                 </div>
-            </div>
-        }
+            }
+        </div>
     </div>
 </section>
 

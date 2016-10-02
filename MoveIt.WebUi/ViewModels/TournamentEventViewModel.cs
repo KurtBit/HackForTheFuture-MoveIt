@@ -15,7 +15,8 @@ namespace MoveIt.WebUi.ViewModels
                 {
                    Id = tournamentEvent.Id,
                    Name = tournamentEvent.Name,
-                   Teams = tournamentEvent.Teams
+                   Teams = tournamentEvent.Teams,
+                   Description = tournamentEvent.Description
                 };
             }
         }
@@ -23,6 +24,8 @@ namespace MoveIt.WebUi.ViewModels
         public int Id { get; set; }
 
         public string Name { get; set; }
+
+        public string Description { get; set; }
 
         public IEnumerable<Team> Teams { get; set; }
     }

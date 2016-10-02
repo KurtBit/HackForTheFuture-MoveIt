@@ -221,11 +221,6 @@ body > footer > div > div:nth-child(1) > div:nth-child(2) {
     font-weight: 700;
 }
 
-#tournament-events > div > div:nth-child(odd) {
-    background-color: #73801D;
-    color: #F6FCFC;
-}
-
 #tournament-events > div > div:nth-child(even) {
     background-color: #F6FCFC;
     color: #73801D;
@@ -248,10 +243,6 @@ body > footer > div > div:nth-child(1) > div:nth-child(2) {
 
 /*GameLobby/Index*/
 /*----------------------------- Game Lobby -----------------------------*/
-body > main > section > div > div > div:nth-child(1) {
-    border-right: 1px solid #73801d;
-}
-
 body > main > section > div > div > div:nth-child(3) {
     border-left: 1px solid #73801d;
 }

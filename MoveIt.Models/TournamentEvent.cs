@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace MoveIt.Models
 {
@@ -12,13 +11,17 @@ namespace MoveIt.Models
 
         public TournamentEvent(
             string name,
-            ICollection<Team> teams)
+            ICollection<Team> teams,
+            string description)
         {
             this.Name = name;
             this.Teams = teams;
+            this.Description = description;
         }
 
         public int Id { get; set; }
+
+        public string Description { get; set; }
 
         public string Name { get; set; }
 
