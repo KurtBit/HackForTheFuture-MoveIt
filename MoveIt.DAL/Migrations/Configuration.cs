@@ -38,6 +38,27 @@ namespace MoveIt.DAL.Migrations
 
                 userManager.Create(owner);
 
+                for (int i = 0; i < 5; i++)
+                {
+                    var user = new ApplicationUser
+                    {
+                        UserName = "Dominent" + i,
+                        Email = "petromilpavlov" + i + "@gmail.com",
+                        PasswordHash = passwordHasher.HashPassword(password),
+                    };
+
+                    var otherUser = new ApplicationUser
+                    {
+                        UserName = "IvoryTailor" + i,
+                        Email = "ivayloterziev91" + i + "@gmail.com",
+                        PasswordHash = passwordHasher.HashPassword(password),
+                    };
+
+                    userManager.Create(user);
+                    userManager.Create(otherUser);
+                    context.SaveChanges();
+                }
+
                 context.SaveChanges();
 
                 #endregion

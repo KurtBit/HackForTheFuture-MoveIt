@@ -208,3 +208,10 @@ body > footer > div > div:nth-child(1) > div:nth-child(2) {
 
 /*----------------------------- End Tournament Events -----------------------------*/
 
+/*GameLobby/Index*/
+/*----------------------------- Game Lobby -----------------------------*/
+.game-lobby > div > div > div:nth-child(2) > h2 {
+    color: #616C0D;
+    font-weight: 700;
+}
+/*----------------------------- End Game Lobby -----------------------------*/
