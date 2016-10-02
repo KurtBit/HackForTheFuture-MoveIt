@@ -137,7 +137,6 @@ namespace MoveIt.WebUi.Controllers
         //
         // GET: /Account/Register
         [AllowAnonymous]
-        [AllowCrossSiteJsonAttribute]
         public ActionResult Register()
         {
             return View();
@@ -148,7 +147,6 @@ namespace MoveIt.WebUi.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        [AllowCrossSiteJsonAttribute]
         public async Task<ActionResult> Register(RegisterViewModel model, HttpPostedFileBase upload)
         {
             if (ModelState.IsValid && upload != null)
@@ -483,13 +481,5 @@ namespace MoveIt.WebUi.Controllers
             }
         }
         #endregion
-
-        [HttpPost]
-        public JsonResult ValidateImage()
-        {
-            var files = Request.Files;
-
-            return Json("Ok");
-        }
     }
 }

@@ -33,12 +33,6 @@
                         @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
                     </div>
                 </div>
-                @*<div class="form-group">
-                        @Html.Label("Avatar", new { @class = "control-label col-md-2" })
-                        <div class="col-md-10">
-                            <input type="file" id="imageUploadForm" name="image" multiple="multiple" />
-                        </div>
-                    </div>*@
                 <div class="form-group">
                     @Html.Label("Avatar", new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
@@ -74,35 +68,6 @@
 @section scripts {
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/jqueryajax")
-
-    @*<script>
-            $(document).ready(function () {
-                $("#imageUploadForm").change(function () {
-                    var formData = new FormData();
-                    var totalFiles = document.getElementById("imageUploadForm").files.length;
-                    for (var i = 0; i < totalFiles; i++) {
-                        var file = document.getElementById("imageUploadForm").files[i];
-
-                        formData.append("imageUploadForm", file);
-                    }
-                    $.ajax({
-                        type: "POST",
-                        url: '/Home/Upload',
-                        data: formData,
-                        dataType: 'json',
-                        contentType: false,
-                        processData: false,
-                        success: function (response) {
-                            alert('succes!!');
-                        },
-                        error: function (error) {
-                            alert("error");
-                        }
-                    });
-                });
-            });
-
-        </script>*@
 
     <script>
         $('#btn').click(function () {

@@ -46,24 +46,5 @@ namespace MoveIt.WebUi.Controllers
 
             return View();
         }
-
-        [HttpPost]
-        public void Upload()
-        {
-            for (int i = 0; i < Request.Files.Count; i++)
-            {
-                var file = Request.Files[i];
-
-                var faceRecognition = new FaceRecognitionService();
-
-                var fileName = Path.GetFileName(file.FileName);
-
-                var path = Path.Combine(Server.MapPath("~/App_Data/"), fileName);
-                file.SaveAs(path);
-
-                var temp = faceRecognition.UploadAndDetectFaces(path);
-            }
-
-        }
     }
 }
