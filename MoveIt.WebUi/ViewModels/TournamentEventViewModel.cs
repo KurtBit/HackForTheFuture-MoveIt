@@ -16,7 +16,9 @@ namespace MoveIt.WebUi.ViewModels
                    Id = tournamentEvent.Id,
                    Name = tournamentEvent.Name,
                    Teams = tournamentEvent.Teams,
-                   Description = tournamentEvent.Description
+                   Description = tournamentEvent.Description,
+                   StartDate = tournamentEvent.StartDate,
+                   EndDate = tournamentEvent.EndDate
                 };
             }
         }
@@ -26,6 +28,10 @@ namespace MoveIt.WebUi.ViewModels
         public string Name { get; set; }
 
         public string Description { get; set; }
+
+        public DateTime StartDate { get; set; }
+
+        public DateTime EndDate { get; set; }
 
         public IEnumerable<Team> Teams { get; set; }
     }

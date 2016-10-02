@@ -14,6 +14,8 @@ namespace MoveIt.Models
             this.Teams = new HashSet<Team>();
         }
 
+        public string AvatarImgUrl { get; set; }
+
         public int TeamId { get; set; }
 
         public virtual ICollection<Team> Teams { get; set; }

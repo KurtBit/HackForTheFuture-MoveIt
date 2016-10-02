@@ -41,15 +41,25 @@
                     <div class="media-body">
                         <h4 class="media-heading">@tournamentEvent.Name</h4>
                         <article>@tournamentEvent.Description</article>
-                        <a href="#" class="btn btn-default pull-right">View Participants</a>
+                        <br />
+                        <div class="pull-left">
+                            <div>
+                                <span class="glyphicon glyphicon-calendar"></span>Start date: @tournamentEvent.StartDate.ToShortDateString()
+                            </div>
+                            <div>
+                                <span class="glyphicon glyphicon-calendar"></span>End date: @tournamentEvent.EndDate.ToShortDateString()
+                            </div>
+                        </div>
+                        <div class="pull-right">
+                            <a href="#" class="btn btn-default">View Participants</a>
+                        </div>
                     </div>
                 </div>
+                <hr />
             }
         </div>
     </div>
 </section>
-
-
 
 @section scripts {
     <script>

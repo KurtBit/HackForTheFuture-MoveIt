@@ -1,10 +1,8 @@
 ﻿@using MoveIt.WebUi.ViewModels
 @model IEnumerable<MoveIt.WebUi.ViewModels.TeamViewModel>
-
 @{
     ViewBag.Title = "Game Lobby";
 }
-
 <section class="game-lobby">
     <div class="container-fluid">
         <div class="row">
@@ -18,27 +16,18 @@
             </div>
             <div class="col-lg-4">
                 <h2 class="text-center">Game Lobby</h2>
-                <div class="row">
-                    <div class="col-lg-offset-1 col-lg-10 game-lobby-location">
-                        <h5 class="text-center">Location Displayed here:</h5>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-offset-4 col-lg-8">
-                        <img src="#" alt="Current User" />
-                    </div>
-                </div>
-                <div class="row">
-                    <form action="/" method="post">
-                        @*TODO:@Html.BeginForm()*@
-                        <div class="col-lg-offset-2 col-lg-4">
-                            <button class="btn btn-facebook" type="submit">Agree/Play</button>
+
+                <section id="map">
+                    <div class="container">
+                        <div class="row">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d308.2091291281821!2d23.33023927369054!3d42.699572280533374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40aa857ab1866193%3A0x8c1a352f813132f8!2z0YPQuy4g4oCe0J_QsNGA0LjQtiIgMTUsIDEwMDAg0KHQvtGE0LjRjw!5e0!3m2!1sbg!2sbg!4v1471472848326"
+                                    width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                         </div>
-                        <div class="col-lg-offset-1 col-lg-4">
-                            <button class="btn btn-adn" type="reset">I don't think so</button>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                </section>
+
+                <a href="" class="btn btn-primary pull-left">Agree/Play</a>
+                <a href="" class="btn btn-danger pull-right">I don't think so</a>
             </div>
             <div class="col-lg-4">
                 <h3 class="text-center">Team 2 @Model.LastOrDefault().Name</h3>
@@ -51,10 +40,3 @@
         </div>
     </div>
 </section>
-
-@section scripts
-{
-    <script>
-        
-    </script>
-}

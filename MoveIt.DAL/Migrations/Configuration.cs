@@ -3,6 +3,7 @@ namespace MoveIt.DAL.Migrations
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
+    using System;
     using System.Collections.Generic;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -34,6 +35,7 @@ namespace MoveIt.DAL.Migrations
                     UserName = "Dominent",
                     Email = "petromilpavlov@gmail.com",
                     PasswordHash = passwordHasher.HashPassword(password),
+                    AvatarImgUrl = "http://placehold.it/150x150"
                 };
 
                 userManager.Create(owner);
@@ -46,11 +48,11 @@ namespace MoveIt.DAL.Migrations
 
                 var tournamentEvents = new List<TournamentEvent>()
                 {
-                    new TournamentEvent("Custom Event 1", new HashSet<Team>(), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."),
-                    new TournamentEvent("Custom Event 2", new HashSet<Team>(), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."),
-                    new TournamentEvent("Custom Event 3", new HashSet<Team>(), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."),
-                    new TournamentEvent("Custom Event 4", new HashSet<Team>(),"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."),
-                    new TournamentEvent("Custom Event 5",  new HashSet<Team>(),"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."),
+                    new TournamentEvent("Custom Event 1", new HashSet<Team>(), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", DateTime.Now, DateTime.Now.AddDays(15)),
+                    new TournamentEvent("Custom Event 2", new HashSet<Team>(), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", DateTime.Now, DateTime.Now.AddDays(15)),
+                    new TournamentEvent("Custom Event 3", new HashSet<Team>(), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", DateTime.Now, DateTime.Now.AddDays(15)),
+                    new TournamentEvent("Custom Event 4", new HashSet<Team>(),"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", DateTime.Now, DateTime.Now.AddDays(15)),
+                    new TournamentEvent("Custom Event 5",  new HashSet<Team>(),"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", DateTime.Now, DateTime.Now.AddDays(15)),
                 };
 
                 foreach (var tournamentEvent in tournamentEvents)
